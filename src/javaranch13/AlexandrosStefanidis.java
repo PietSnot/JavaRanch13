@@ -19,6 +19,7 @@ import java.util.function.Function;
 public class AlexandrosStefanidis {
 }
 
+
 class Trap {
 
     public static void main(String args[]) {

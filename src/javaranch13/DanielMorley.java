@@ -28,7 +28,7 @@ public class DanielMorley {
 
 class TicTacToe {
 
-        private   static int[][] winArray = new int[][]{
+        private static int[][] winArray = new int[][]{
             {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, //horizontal wins
             {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, //vertical wins
             {0, 4, 8}, {2, 4, 6} //diagonal wins
