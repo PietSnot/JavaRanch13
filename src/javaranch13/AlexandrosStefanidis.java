@@ -71,7 +71,7 @@ static double trap(double a, double b, int n, double h, Function<Double, Double>
         x = a + i * h;
         area = area + f.apply(x);
     }
-    area = area * h;
+    area = area     * h;
     return area;
 } //  trap  
 
