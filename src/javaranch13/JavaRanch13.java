@@ -27,7 +27,8 @@ public class JavaRanch13 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        StringBuilder sb = new StringBuilder("abcde");
+        System.out.println("position of d = " + sb.indexOf("d"));
     }
 
 }
