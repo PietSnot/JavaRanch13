@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class JayLeslie {
     public static void main(String... args) {
-        int[] a = {10, 11, 12, 9, 8, 8,  14, 15};
+        int[] a = {10, 11, 12, 9, 9, 8, 8,  14, 15};
         List<List<Integer>> list = new ArrayList<>();
         List<Integer> currentList = new ArrayList<>();
         currentList.add(a[0]);
@@ -39,9 +39,9 @@ public class JayLeslie {
             }
             else {
                 currentList.add(a[i]);
+                if (i == a.length - 1) list.add(currentList);
             }
         }
-        list.add(currentList);
         for (int i = 1; i < list.size(); i++) list.get(i).add(0, list.get(i - 1).get(list.get(i-1).size() - 1));
         System.out.println(list);
     }
