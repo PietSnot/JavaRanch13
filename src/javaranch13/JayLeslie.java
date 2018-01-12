@@ -39,9 +39,9 @@ public class JayLeslie {
             }
             else {
                 currentList.add(a[i]);
-                if (i == a.length - 1) list.add(currentList);
             }
         }
+        list.add(currentList);
         for (int i = 1; i < list.size(); i++) list.get(i).add(0, list.get(i - 1).get(list.get(i-1).size() - 1));
         System.out.println(list);
     }
