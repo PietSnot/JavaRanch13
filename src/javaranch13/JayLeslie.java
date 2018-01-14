@@ -35,17 +35,13 @@ public class JayLeslie {
                 list.add(currentList);
                 currentDir = Direction.DOWN;
                 currentList = new ArrayList<>();
-                currentList.add(a[i]);
             }
             else if (a[i].compareTo(a[i - 1]) > 0 && currentDir == Direction.DOWN) {
                 list.add(currentList);
                 currentDir = Direction.UP;
                 currentList = new ArrayList<>();
-                currentList.add(a[i]);
             }
-            else {
-                currentList.add(a[i]);
-            }
+            currentList.add(a[i]);
         }
         list.add(currentList);
         for (int i = 1; i < list.size(); i++) {
