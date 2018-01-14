@@ -23,23 +23,23 @@ import java.util.concurrent.TimeUnit;
 
 public class AndrzejZahorskiOriginal {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Random r = new Random();
-        int nrOfTasks = r.nextInt(5) + 3;
-        TaskMachineOriginal taskMachine = new TaskMachineOriginal(nrOfTasks);
+public static void main(String[] args) throws ExecutionException, InterruptedException {
+    Random r = new Random();
+    int nrOfTasks = r.nextInt(5) + 3;
+    TaskMachineOriginal taskMachine = new TaskMachineOriginal(nrOfTasks);
 
-        for (int i = 0; i < nrOfTasks; i++) {
-            taskMachine.go(i);
-        }
-        
-        while (!taskMachine.tasksFinished()) {
-            TimeUnit.SECONDS.sleep(1);
-            if (r.nextBoolean()) taskMachine.pleaseStop(r.nextInt(nrOfTasks));
-            taskMachine.report();
-        }
-
-        taskMachine.finish();
+    for (int i = 0; i < nrOfTasks; i++) {
+        taskMachine.go(i);
     }
+
+    while (!taskMachine.tasksFinished()) {
+        TimeUnit.SECONDS.sleep(1);
+        if (r.nextBoolean()) taskMachine.pleaseStop(r.nextInt(nrOfTasks));
+        taskMachine.report();
+    }
+
+    taskMachine.finish();
+}
 }
 
 //-----------------------------------------------------------------------
@@ -60,20 +60,20 @@ class TaskMachineOriginal {
         service = Executors.newFixedThreadPool(2);
     }
     
-    public boolean tasksFinished() {
-        return futureTaskList.stream().allMatch(FutureTask::isDone);
-    }
+public boolean tasksFinished() {
+    return futureTaskList.stream().allMatch(FutureTask::isDone);
+}
     
     public void finish() {
         service.shutdown();
     }
     
-    public void report() {
-        System.out.println("**** report ***********");
-        for (int i = 0; i < futureTaskList.size(); i++) {
-            magicBoxPleaseLetMeKnow(i);
-        }
+public void report() {
+    System.out.println("**** report ***********");
+    for (int i = 0; i < futureTaskList.size(); i++) {
+        magicBoxPleaseLetMeKnow(i);
     }
+}
 
     private void magicBoxPleaseLetMeKnow(int taskNum) {
         FutureTask tmp = futureTaskList.get(taskNum);
