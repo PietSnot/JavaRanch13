@@ -33,12 +33,11 @@ public class AndrzejZahorskiOriginal {
         }
         
         while (!taskMachine.tasksFinished()) {
-            taskMachine.report();
             TimeUnit.SECONDS.sleep(1);
             if (r.nextBoolean()) taskMachine.pleaseStop(r.nextInt(nrOfTasks));
+            taskMachine.report();
         }
 
-        taskMachine.report();
         taskMachine.finish();
     }
 }
@@ -62,7 +61,7 @@ class TaskMachineOriginal {
     }
     
     public boolean tasksFinished() {
-        return futureTaskList.stream().allMatch(e -> e.isDone());
+        return futureTaskList.stream().allMatch(FutureTask::isDone);
     }
     
     public void finish() {
@@ -128,7 +127,7 @@ class MyTaskSelfMade implements Callable<Integer> {
             TimeUnit.SECONDS.sleep(sleepSeconds);
         }
         catch (InterruptedException e) {
-            System.out.println("MyTask " + result + " is interrupted");
+//            System.out.println("MyTask " + result + " is interrupted");
         }
         return result;
     }
