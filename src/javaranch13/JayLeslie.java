@@ -17,6 +17,8 @@ public class JayLeslie {
     public static void main(String... args) {
         Integer[] a = {10, 11, 12, 9, 9, 8, 8,  14, 15};
         System.out.println(processArray(a));
+        String[] s = {"a", "b", "a", "c" };
+        System.out.println(processArray(s));
     }
     
     public static <T extends Comparable<T>> List<List<T>> processArray(T[] a) {
