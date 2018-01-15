@@ -74,10 +74,10 @@ class ComboNumber extends JFrame implements ActionListener {
         }
     }
     
-    private void processTimerEvent(ActionEvent e) {
-        System.out.println("Time's UP; new secret number...");
-        generateNewSecret();
-    }
+private void processTimerEvent(ActionEvent e) {
+    System.out.println("Time's UP; new secret number...");
+    generateNewSecret();
+}
     
     private void processGuessCorrect() {
         timer.stop();
