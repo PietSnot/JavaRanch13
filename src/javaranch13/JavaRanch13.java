@@ -26,9 +26,28 @@ public class JavaRanch13 {
     /**
      * @param args the command line arguments
      */
+    
+    private int i = 5;
+    private static int j = 5;
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder("abcde");
-        System.out.println("position of d = " + sb.indexOf("d"));
+//        StringBuilder sb = new StringBuilder("abcde");
+//        System.out.println("position of d = " + sb.indexOf("d"));
+    }
+    
+    static class A {
+        private static int a;
+        private int b;
+        A() {
+//            a = i;   //  error
+            b = j;   //  okay
+        }
+    }
+    
+    class B {
+        private int b;
+        B() {
+            b = i;   // okay;
+        }
     }
 
 }
