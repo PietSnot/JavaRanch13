@@ -22,7 +22,9 @@ public class EmptyInterface {
         // gaat niet, want I is geen functioneel interface
         
         int[] a = {1,2,3,4,5,6,7,8,9,10};
+        int[] b = Arrays.stream(a).map(i -> -i).sorted().map(i -> -i).toArray();
         System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
         a = Arrays.stream(a)
                 .boxed()
                 .sorted(Comparator.reverseOrder())
