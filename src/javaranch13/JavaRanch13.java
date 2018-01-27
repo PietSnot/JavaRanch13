@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import javafx.event.ActionEvent;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -32,6 +34,10 @@ public class JavaRanch13 {
     public static void main(String[] args) {
 //        StringBuilder sb = new StringBuilder("abcde");
 //        System.out.println("position of d = " + sb.indexOf("d"));
+    
+    Function<Integer, Integer> function = x -> 3 * x;
+    Consumer<Integer> piet = x -> function.apply(x);
+//    Consumer>Integer> pierre = x -> 3 * x;
     }
     
     static class A {
